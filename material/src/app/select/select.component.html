@@ -1,32 +1,34 @@
-<h4>Basic mat-select</h4>
-
-<mat-form-field>
-  <mat-label>State</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let state of states" [value]="state.code">
-      {{state.name}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-
-<mat-form-field>
-  <mat-label>Vendor</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let vendor of vendors" [value]="vendor.code">
-      {{vendor.name}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-
-<mat-form-field>
-  <mat-label>Order Number(s)</mat-label>
-  <textarea matInput placeholder="Textarea" 
-  [formControl]="orderNumberFC" 
-     (change)="onTextChange()" rows="4" cols="50"></textarea>
-     <mat-error *ngIf="orderNumberFC.hasError('required')">
-        Comment is required.
+<h2>Fill the below data: </h2>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>State</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let state of states" [value]="state.code">
+        {{state.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Vendor</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let vendor of vendors" [value]="vendor.code">
+        {{vendor.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Order Number(s)</mat-label>
+    <textarea matInput placeholder="Textarea" [formControl]="orderNumberFC" (change)="onTextChange()" rows="4"
+      cols="50"></textarea>
+    <mat-error *ngIf="orderNumberFC.hasError('required')">
+      Comment is required.
     </mat-error>
     <mat-error *ngIf="orderNumberFC.hasError('pattern')">
-        Only allow number(s).
-    </mat-error> 
-</mat-form-field>
+      Only allow number(s).
+    </mat-error>
+  </mat-form-field>
+</p>
