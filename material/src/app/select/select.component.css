@@ -1,0 +1,12 @@
+.button button,
+.button a {
+  margin-right: 1px;
+  color: whitesmoke;
+  animation-name: example;
+  animation-duration: 3s;
+}
+
+@keyframes example {
+    from {background-color: darkred;}
+    to {background-color: darkblue;}
+  }
