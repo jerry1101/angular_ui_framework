@@ -20,5 +20,13 @@
 
 <mat-form-field>
   <mat-label>Order Number(s)</mat-label>
-  <textarea matInput placeholder="Textarea" rows="4" cols="50"></textarea>
+  <textarea matInput placeholder="Textarea" 
+  [formControl]="orderNumberFC" 
+     (change)="onTextChange()" rows="4" cols="50"></textarea>
+     <mat-error *ngIf="orderNumberFC.hasError('required')">
+        Comment is required.
+    </mat-error>
+    <mat-error *ngIf="orderNumberFC.hasError('pattern')">
+        Only allow number(s).
+    </mat-error> 
 </mat-form-field>
