@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { MatLabel } from '@angular/material'
-import { FormBuilder, FormGroup, FormControl, Validators, PatternValidator } from '@angular/forms';
-import { StaticSymbolResolver } from '@angular/compiler';
-import { stateList,vendorList } from './mockdata'
+import { FormControl, Validators, } from '@angular/forms';
+import { stateList, vendorList } from './mockdata'
 import { State } from './state'
 import { Vendor } from './vendor'
 
@@ -31,10 +29,8 @@ export class SelectComponent {
     Validators.required,
   ]);
 
-  myForm = this.builder.group({
-    area: this.stateFC
-  });
-  constructor(private builder: FormBuilder) { };
+
+  constructor() { };
 
   search(query: string) {
     console.log('query', query)
