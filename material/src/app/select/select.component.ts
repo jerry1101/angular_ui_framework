@@ -16,6 +16,8 @@ export interface Vendor {
   styleUrls: ['./select.component.css']
 })
 export class SelectComponent {
+  selectedState: string = "";
+  selectedVendor: string= "";
   orderNumberFC = new FormControl('',[Validators.required,Validators.pattern('[^a-zA-Z]*')]);
   onTextChange() {
     console.log(this.orderNumberFC.value);

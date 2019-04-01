@@ -2,22 +2,25 @@
 <p>
   <mat-form-field appearance="fill">
     <mat-label>State</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let state of states" [value]="state.code">
+    <mat-select [(value)]="selectedState">
+      <mat-option *ngFor="let state of states" [value]="state.name">
         {{state.name}}
       </mat-option>
     </mat-select>
   </mat-form-field>
+  <span>Selected state:{{selectedState}}</span>
 </p>
 <p>
   <mat-form-field appearance="fill">
     <mat-label>Vendor</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let vendor of vendors" [value]="vendor.code">
+    <mat-select [(value)]="selectedVendor">
+      <mat-option *ngFor="let vendor of vendors" [value]="vendor.name">
         {{vendor.name}}
       </mat-option>
     </mat-select>
   </mat-form-field>
+  <span>Selected vendor: {{selectedVendor}}</span>
+  
 </p>
 <p>
   <mat-form-field appearance="fill">
