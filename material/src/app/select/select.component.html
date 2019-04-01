@@ -2,8 +2,11 @@
 <p>
   <mat-form-field appearance="fill">
     <mat-label>State</mat-label>
-    <mat-select [(value)]="selectedState">
-      <mat-option *ngFor="let state of states" [value]="state.name">
+    <mat-select [formControl]="stateFC" [(value)]="selectedState" (openedChange)="myInput.focus()">
+      <input class="myInput" #myInput matInput focused="'true'" type="text" (keyup)="search($event.target.value)"
+        autocomplete="off" placeholder="search">
+      <mat-divider></mat-divider>
+      <mat-option *ngFor="let state of filteredStates" [value]="state.name">
         {{state.name}}
       </mat-option>
     </mat-select>
@@ -20,7 +23,7 @@
     </mat-select>
   </mat-form-field>
   <span>Selected vendor: {{selectedVendor}}</span>
-  
+
 </p>
 <p>
   <mat-form-field appearance="fill">
